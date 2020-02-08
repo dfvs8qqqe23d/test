@@ -1,0 +1,3 @@
+*.zip -diff
+*.ai -diff
+*.pdf -diff

@@ -1,0 +1,17 @@
+/*.MD
+/*.md
+.eslintrc
+.gitattributes
+.gitignore
+.jscsrc
+.jshintrc
+.npmignore
+LICENCE
+npm-debug.log
+/docs/**
+/src/**
+/scripts/**
+/examples/**
+/test/**
+/tests/**
+/config/**

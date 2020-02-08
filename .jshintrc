@@ -1,0 +1,15 @@
+{
+    "freeze": true,
+    "futurehostile":true,
+    "latedef":true,
+    "nonbsp":true,
+    "noarg": true,
+    "plusplus": false,
+    "shadow":true,
+    "undef": true,
+    "nonew": true,
+    "boss": true,
+    "node": true,
+    "expr":true,
+    "esversion":6
+}
