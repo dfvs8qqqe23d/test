@@ -12,6 +12,7 @@ A library to fulfill the yoco specifications.
 
 ```js
 
+
 const lib = require('yocotest');
 
 let result = lib.determineWinner([
