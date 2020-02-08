@@ -10,7 +10,7 @@ A library to fulfill the yoco specifications.
 
 *Please note, obviously this is not a published package.
 
-`js
+```js
 
 const lib = require('yocotest');
 
@@ -39,6 +39,6 @@ else
         //Do something
     }
 }
-`
+```
 
 Any other additional documentation necessary can be generated via `npm run generateDocumentation`
