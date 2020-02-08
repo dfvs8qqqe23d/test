@@ -141,8 +141,6 @@ function determineWinner(handA,handB)
         {
             return {result:constants.OUTCOMES.B_WINS};
         }
-
-        throw new Error('Unexpected fallthrough');
     }
     catch (err)
     {
