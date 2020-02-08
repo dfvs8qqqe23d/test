@@ -6,12 +6,6 @@ const intersect = require('intersect');
 const cardUtils =require('./cardUtils');
 const sort = require('./sort');
 
-
-function mapToPointTotal(input)
-{
-    return input.map(x=>cardUtils.getPointValue(x));
-}
-
 /**
  * Determines the point value of a hand of cards
  * @param {Array<String>} input
@@ -20,7 +14,7 @@ function mapToPointTotal(input)
  */
 function getTotal(input)
 {
-    return mapToPointTotal(input).reduce((a, b) => a + b, 0);
+    return input.map(x=>cardUtils.getPointValue(x))(input).reduce((a, b) => a + b, 0);
 }
 
 /**
@@ -33,6 +27,10 @@ function isBust(score)
     return score > constants.MAX_SCORE;
 }
 
+/**
+ * Validates a hand for correctness
+ * @param {Array<String>} hand 
+ */
 function validateHand(hand)
 {
     if (!isArray(hand))
@@ -56,6 +54,11 @@ function validateHand(hand)
     }
 }
 
+/**
+ * Validates the inputs
+ * @param {*} handA 
+ * @param {*} handB 
+ */
 function validateInput(handA,handB)
 {
     validateHand(handA);
@@ -67,7 +70,6 @@ function validateInput(handA,handB)
     }
     //other errors will be thrown during runtime relating to if a card is invalid or not
 }
-
 
 /**
  * Determines the winner between the hands of two players
@@ -111,7 +113,7 @@ function determineWinner(handA,handB)
         }
         //Here both players have the same point value
         const sortedA = sort.sortHand(handA),
-         sortedB = sort.sortHand(handB);
+            sortedB = sort.sortHand(handB);
         //Now we loop through the hands to find who has the largest point
 
         for (let i =0, c= Math.min(sortedA.length,sortedB.length); i<c; i++)
@@ -141,8 +143,6 @@ function determineWinner(handA,handB)
         {
             return {result:constants.OUTCOMES.B_WINS};
         }
-
-        throw new Error('Unexpected fallthrough');
     }
     catch (err)
     {
